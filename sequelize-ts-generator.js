@@ -1,5 +1,8 @@
 const pluralize = require('pluralize')
 
+const modelsPath = './src/database/models/'
+const migrationsPath = './src/database/migrations/'
+
 function capitalizeString(str) {
   if (typeof str !== 'string') {
     throw new TypeError('Param must be string value!');
@@ -63,7 +66,7 @@ function modelTSConstructor() {
     return `${type[0]}: {type: Sequelize.${type[1].toUpperCase()}}`
   })
 
-  let writeFirstStream = fs.createWriteStream(`./src/database/models/${fileName}`)
+  let writeFirstStream = fs.createWriteStream(`${modelsPath + fileName}`)
   writeFirstStream.write(
     `import { Model, Association, DataTypes, Sequelize } from 'sequelize'
         export class ${capitalizeString(name)} extends Model {
@@ -98,7 +101,7 @@ function modelTSConstructor() {
     }`
   )
   let writeSecondStream = fs.createWriteStream(
-    `./src/database/migrations/${dateStamp + '-' + 'create' + '-' + pluralize(fileMigration) + '-' + 'table'  + '.js'}`
+    `${migrationsPath + dateStamp + '-' + 'create' + '-' + pluralize(fileMigration) + '-' + 'table'  + '.js'}`
   )
   writeSecondStream.write(`
 'use strict';
