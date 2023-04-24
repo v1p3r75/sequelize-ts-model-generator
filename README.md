@@ -32,3 +32,5 @@ Cela générera un modèle Sequelize et un fichier de migration pour une table d
 
 ## Avertissement
 Assurez-vous de bien comprendre le code avant de l'utiliser dans votre application, et de le personnaliser en fonction de vos besoins spécifiques. Ce code est fourni à titre d'exemple et peut nécessiter des modifications pour s'adapter à votre environnement de développement et à vos besoins particuliers.
+
+## Licence

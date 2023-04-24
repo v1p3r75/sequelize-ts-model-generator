@@ -15,7 +15,7 @@ function capitalizeString(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-function modelTSConstructor() {
+function sequelizeGenerator() {
   'use strict'
   const fs = require('fs')
   const args = require('yargs').argv
@@ -136,4 +136,4 @@ module.exports = {
 `)
 }
 
-modelTSConstructor()
+sequelizeGenerator()
